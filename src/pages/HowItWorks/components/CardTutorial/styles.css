@@ -1,0 +1,16 @@
+.CardTutorialSteps {
+
+    height: 150px;
+    float: left;
+    margin-block: 80px;
+    margin-inline: 10px;
+    margin-left: 190px;
+    
+}
+
+.card-body {
+
+    background-color: white;
+    
+    
+}
