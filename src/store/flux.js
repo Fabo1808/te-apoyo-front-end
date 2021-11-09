@@ -7,7 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			favorites: [],
 			description: "",
 			token: undefined,
-			url: "http://127.0.0.1:8000",
+			url_cloudinary: "https://api.cloudinary.com/v1_1/teapoyo/image/upload",
+			url_api:"http://192.168.0.6:8000",
 			user: ""
 		},
 		actions: {
