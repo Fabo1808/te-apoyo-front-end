@@ -1,0 +1,37 @@
+.ContainerConcept {
+    
+    padding-top:60px;
+    padding-left: 50px;
+
+}
+
+
+
+.section {
+
+    text-align: left;
+    padding-top: 30px;
+}
+
+
+
+.title-section {
+
+    font-size: 50px;
+    text-decoration-line:underline;
+}
+
+
+
+.description-section {
+
+    font-size: 10px;
+    
+}
+
+.card-main {
+
+    width: 580px;
+    height: 700px;
+
+}

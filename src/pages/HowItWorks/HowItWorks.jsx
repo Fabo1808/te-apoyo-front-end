@@ -3,11 +3,11 @@ import {CardTutorial} from './components'
 
 export function HowItWorks() {
     return (
-        <div>
-            <container-fluid>
+        <div className = "container-fluid">
+            
             <CardTutorial/>
             <CardTutorial/>
-            </container-fluid>
+            
 	    		
 	    </div>
     )
