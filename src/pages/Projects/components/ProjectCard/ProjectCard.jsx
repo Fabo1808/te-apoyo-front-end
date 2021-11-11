@@ -1,28 +1,36 @@
 import React from 'react'
 import img from '../../../../images/homeimage2.jpg'
 import './styles.css'
+import { Link } from 'react-router-dom'
 
 
-export function ProjectCard() {
+export function ProjectCard({ong}) {
 
     return (
 
-<div class="ProjectList">
+<div class="ProjectList ">
   <div class="row">
     <div class="col-4">
-    <img  className='w-75 rounded-3' src={img} alt="falta seleccionar imagen" />
+    <img  className='w-75 rounded-3' src={ong.logo} alt="falta seleccionar imagen" />
     </div>
     <div class="col-5">
         <div class="NameProjectCard">
-            <strong>FUNDANA</strong>
+            <strong>{ong.ong_name}</strong>
         </div>
         <div class="DescriptionProjectCard">
-            <p1>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime quisquam nesciunt velit illo temporibus illum vitae aperiam, qui at veniam recusandae voluptatum eum quod doloremque. Dolorem eveniet quod officia minima.
-            </p1>
+            <p>
+                {ong.description}
+            </p>
+           
+
         </div>
         <div class="GoToProject">
-        <button type="button" class="btn btn-primary">Ver Perfil</button>
+        <Link 
+          to={`profile/${ong.id}`} 
+          class="btn btn-primary"
+        >
+          Ver Perfil
+        </Link>
         </div>
     </div>
 
