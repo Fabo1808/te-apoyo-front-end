@@ -1,12 +1,13 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import Carousel from 'react-elastic-carousel';
+import { Link } from 'react-router-dom';
 import logo1 from '../../../../images/logo1.png'
-import logo2 from '../../../../images/logo2.png'
-import logo3 from '../../../../images/logo3.png'
+import { Context } from '../../../../store/appContext';
 import './styles.css'
 
 
 export function CarruselFundations() {
+  const {store,actions}=useContext(Context)
 
     const breakPoints = [
         {width:100, itemsToShow:7},
@@ -21,42 +22,25 @@ export function CarruselFundations() {
 <div>
     <h5 className= 'Title' >Descubre a quienes puedes ayudar</h5>
     <Carousel className = 'CarruselFundations' breakPoints={breakPoints}>
-        
-    <img
-          className="LogoFundacion"
-          src={logo1}
-          alt="Second slide"
-        />
-    <img
-          className="LogoFundacion"
-          src={logo2}
-          alt="Second slide"
-        />
-    <img
-          className="LogoFundacion"
-          src={logo3}
-          alt="Second slide"
-        />
-    <img
-          className="LogoFundacion"
-          src={logo1}
-          alt="Second slide"
-        />
-    <img
-          className="LogoFundacion"
-          src={logo2}
-          alt="Second slide"
-        />
-    <img
-          className="LogoFundacion"
-          src={logo3}
-          alt="Second slide"
-        />
-     <img
-          className="LogoFundacion"
-          src={logo1}
-          alt="Second slide"
-        />
+      <Link to='/Contact'>
+        <img
+            className="LogoFundacion"
+            src={logo1}
+            alt="Second slide"
+          />
+      </Link>
+        {store.dataONG.map((ong)=>(
+          <Link key={ong.id} to={`/profile/${ong.id}`}>
+            <img
+              className="LogoFundacion"
+              src={ong.logo}
+              alt="Second slide"
+            />
+          </Link>
+        ))
+      }
+    
+    
     </Carousel>
 </div>
 

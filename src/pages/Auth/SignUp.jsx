@@ -65,7 +65,8 @@ export function SignUp() {
         if(response.message===false){
             alert("Algo ocurrió, puedes intentar de nuevo")
         }else{
-            history.push("/signin");
+            actions.getONG()
+            history.push("/");
 
         }
 
@@ -74,7 +75,7 @@ export function SignUp() {
 	
 
     return (
-        <div className='container text-start mt-5 text-secondary w-50'>
+        <div className='container text-start mt-5 text-secondary w-75'>
             <div className="mb-3 w-25">
             <label for="exampleFormControlInput1" className="form-label">Nombre</label>
                 <input 
@@ -134,8 +135,8 @@ export function SignUp() {
                 <div className='container p-4'>
                     <p>Datos Bancarios</p>
                     <div className='row d-flex align-items-center'>
-                        <div className='col-1'>Banco:</div>
-                        <div className='col-11'>
+                        <div className='col-2'>Banco:</div>
+                        <div className='col-10'>
                             <input 
                                 type="text" 
                                 className="form-control" 
@@ -146,8 +147,8 @@ export function SignUp() {
                             
                     </div>
                     <div className='row d-flex align-items-center'>
-                        <div className='col-1'>RIF:</div>
-                        <div className='col-11'>
+                        <div className='col-2'>RIF:</div>
+                        <div className='col-10'>
                             <input 
                                 type="text" 
                                 className="form-control"
@@ -158,8 +159,8 @@ export function SignUp() {
                             
                     </div>
                     <div className='row d-flex align-items-center'>
-                        <div className='col-1'>Cuenta:</div>
-                        <div className='col-11'>
+                        <div className='col-2'>Cuenta:</div>
+                        <div className='col-10'>
                             <input 
                                 type="text" 
                                 className="form-control"
