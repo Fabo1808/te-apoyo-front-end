@@ -1,10 +1,18 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React,{useContext} from "react";
+import { NavLink, NavLink, useHistory } from "react-router-dom";
 import {Navbar, Nav, Container} from 'react-bootstrap';
 import img6 from '../../images/logo1.png'
-import './styles.css'
+import React,{useContext} from "react";
+import { Context } from "../../store/appContext";
 
 export function NavBar() {
+    const {store,actions}=useContext(Context)
+    const history= useHistory()
+
+const singOff= ()=>{
+    actions.deleteToken()
+    history.push('/')
+}
   
       return (
                 <div className="container-fluid">
@@ -19,16 +27,49 @@ export function NavBar() {
                             <NavLink className='navlink' to="/contact">Contáctanos</NavLink>
                         </div>
                         <div className="col-4">
-                            <NavLink className='navlinkright' to="/signIn">Iniciar sesión</NavLink>
-                            <NavLink className='navlinkright' to="/signUp">
-                                <button type="button" className="btn btn-outline-primary">Registrar Mi ONG</button>
-                            </NavLink>
-                            
+                            {!store.token && (
+                                <>
+                                <NavLink className='navlinkright' to="/signIn">Iniciar sesión</NavLink>
+                                <NavLink className='navlinkright' to="/signUp">
+                                    <button type="button" className="btn btn-outline-primary">Registrar Mi ONG</button>
+                                </NavLink>
+                                </>
+
+                            )}
+
+                            {store.token && (
+                                <>
+                                <button
+                                    type="button"
+                                    className="btn btn-outline-primary"
+                                    onClick={singOff}>Cerrar sesión
+                                </button>
+                                <Link
+                                    to='/createEvent'
+                                    className="btn btn-primary mx-2"
+                                >Crear un Evento
+                                </Link>
+
+
+                                </>
+                            )}
+
+
+
                         </div>
-                    </div>
+                        {store.token && (
+                            <>
+                            <h5 className='text-start mx-5'>
+                                Bienvenido(a) {store.ONG}
+                            </h5>
+
+
+                            </>
+                        )}
+
                 </div>
-                
+            </div>
+
         );
 }
-
 
