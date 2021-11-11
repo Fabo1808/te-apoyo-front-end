@@ -2,6 +2,7 @@ import React,{useContext} from "react";
 import { Link,NavLink, useHistory } from "react-router-dom";
 import img6 from '../../images/logo1.png'
 import { Context } from "../../store/appContext";
+import './styles.css'
 
 export function NavBar() {
     const {store,actions}=useContext(Context)
