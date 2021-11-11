@@ -1,0 +1,23 @@
+.ProjectList {
+
+    padding-top: 100px;
+}
+
+
+
+.NameProjectCard{
+    color:darkslategrey;
+    font-size:20px;
+    text-align: left;
+
+}
+
+.DescriptionProjectCard{
+    text-align: left;
+    padding-top: 5px;
+}
+
+.GoToProject{
+    text-align: left;
+    padding-top: 30px;
+}

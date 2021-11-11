@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {ProjectSearchBar, ProjectCard} from './components'
 
 export function Projects() {
     return (
         <div>
-	    	
+	    		<ProjectSearchBar/>
+                <ProjectCard/>
 	    </div>
     )
 }
