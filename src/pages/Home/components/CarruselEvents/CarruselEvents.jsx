@@ -18,7 +18,7 @@ export function CarruselEvents() {
     
 
 <div>
-    <h5 className= 'Title' >Asiste a las Actividades de esta semana</h5>
+    <h5 className= 'Title' >Asiste a las actividades de esta semana</h5>
     <Carousel className = 'CarruselEvent' breakPoints={breakPoints}>
         {store.activities.map((activity)=>(
             <Cards key={activity.id} id={activity.id}/>

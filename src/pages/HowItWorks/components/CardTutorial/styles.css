@@ -1,10 +1,22 @@
+
+.title-card-tutorial{
+
+    padding-top: 60px;
+    text-align: left;
+    margin-left: 150px;
+    color:darkslategray;
+}
+
+
+
+
 .CardTutorialSteps {
 
     height: 150px;
     float: left;
-    margin-block: 80px;
-    margin-inline: 10px;
-    margin-left: 190px;
+    margin-block: 10px;
+    margin-left: 150px;
+
     
 }
 
@@ -13,4 +25,33 @@
     background-color: white;
     
     
+}
+
+.numberCircle {
+
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        padding: 5px;
+        box-shadow: 0px 1px 2px darkslategray;
+    
+        background: #fff;
+        border: 2px solid;
+         border-color: darkslategray;
+        color: darkslategray;
+        text-align: center;
+    
+        font: 20px;   
+}
+
+.CardBody {
+
+    background-color: white;
+    padding-left: 10px;
+    color:darkslategray;
+    
+}
+
+.textocard {
+    text-align: left;
 }

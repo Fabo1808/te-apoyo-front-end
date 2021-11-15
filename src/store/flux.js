@@ -3,7 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			token: undefined,
 			url_cloudinary: "https://api.cloudinary.com/v1_1/teapoyo/image/upload",
-			url_api:"http://192.168.0.6:8000",
+			url_api:"http://10.62.1.136:8000",
 			ONG: "",
 			id:undefined,
 			dataONG:[],

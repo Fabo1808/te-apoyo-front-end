@@ -16,7 +16,7 @@ export function MainConcept() {
                 <h4><u>QUIÉNES SOMOS</u></h4>
             </div>
             <div ClassName="description-section">
-                <p1>1000 Voluntades es una Asociación Civil sin fines de lucro que busca canalizar todos los impulsos solidarios en acciones concretas. A través de una página web con un mapa interactivo, buscamos conectar personas que están dispuestas a ayudar con aquellos que realmente lo necesitan.</p1>
+                <p1>1000 Voluntades es una Asociación Civil sin fines de lucro que busca canalizar todos los impulsos solidarios en acciones concretas. Por medio de esta plataforma buscamos conectar personas que están dispuestas a ayudar con aquellos que realmente lo necesitan.</p1>
             </div>
         </div>
         <div className="section">

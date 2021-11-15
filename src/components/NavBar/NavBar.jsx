@@ -19,7 +19,7 @@ const handleContextMenu=(e)=>{
 }
   
       return (
-                <div className="container-fluid">
+                <div className="container-fluid-navbar">
                     <div className="row">
                         <div className="col-8">
                             <NavLink className='navlink' to="/" onContextMenu={handleContextMenu}>

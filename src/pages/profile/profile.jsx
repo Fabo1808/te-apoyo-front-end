@@ -7,6 +7,7 @@ import { Cards } from '../Home/components';
 const Profile = () => {
     const {store, actions}=useContext(Context);
     const {id}= useParams()
+    console.log(id)
     
     
    
