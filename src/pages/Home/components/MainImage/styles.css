@@ -1,7 +1,6 @@
 .MainImage {
 
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
     height: 500px;
+    display: flex;
 }
+

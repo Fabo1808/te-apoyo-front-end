@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 const Profile = () => {
     const {store, actions}=useContext(Context);
     const {id}= useParams()
+    console.log(id)
     
     const ONG= store.dataONG.filter((ong)=>ong.id.toString()=== id)
    
