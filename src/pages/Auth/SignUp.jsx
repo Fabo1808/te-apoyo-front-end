@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button'
 
 
 export function SignUp() {
-    const {store,actions} = useContext(Context)
+    const {store,actions} = useContext(Context);
 	const history = useHistory();
 
     const [name,setName]=useState(undefined);
