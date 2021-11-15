@@ -5,7 +5,7 @@ import { Context } from '../../store/appContext';
 
 export function SignIn() {
     const {store,actions}=useContext(Context)
-    const [name,setName]=useState(undefined)
+    const [name,setName]=useState(undefined);
     const [password,setPassword]=useState(undefined)
     const history= useHistory()
 
