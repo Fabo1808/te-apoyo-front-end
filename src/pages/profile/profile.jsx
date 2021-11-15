@@ -1,17 +1,29 @@
 import React,{useContext} from 'react'
 import { Context } from '../../store/appContext'
-import { useParams } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
+import Carousel from 'react-elastic-carousel';
+import { Cards } from '../Home/components';
 
 const Profile = () => {
     const {store, actions}=useContext(Context);
     const {id}= useParams()
     
-    const ONG= store.dataONG.filter((ong)=>ong.id.toString()=== id)
+    
+   
+    
+ const ONG= store.dataONG.filter((ong)=>ong.id.toString()=== id)
+
+      console.log(ONG)
+    const breakPoints = [
+        {width:100, itemsToShow:3},
+    ]
+
    
     return (
-        <div>
-
+        <>
+       
             
+            <div>
                     <div>
                         ONG={ONG[0].ong_name} 
                     </div>
@@ -36,8 +48,25 @@ const Profile = () => {
                 account= {ONG[0].account}
                 description= {ONG[0].description}
                 
+
+
         </div>
+        
+        <Carousel className = 'CarruselEvent' breakPoints={breakPoints}>
+        {ONG[0].activities.map((activity)=>(
+            <Cards key={activity.id} id={activity.id}/>
+
+        ))}
+      
+    </Carousel>
+    
+        
+        
+       
+        
+        </>
     )
+
 }
 
 export default Profile

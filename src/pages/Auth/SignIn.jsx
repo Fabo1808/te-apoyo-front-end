@@ -5,8 +5,8 @@ import { Context } from '../../store/appContext';
 
 export function SignIn() {
     const {store,actions}=useContext(Context)
-    const [name,setName]=useState('')
-    const [password,setPassword]=useState('')
+    const [name,setName]=useState(undefined)
+    const [password,setPassword]=useState(undefined)
     const history= useHistory()
 
     const handleClick= async()=>{
@@ -25,6 +25,7 @@ export function SignIn() {
             localStorage.setItem('id',response.id)
 
             actions.setToken()
+          
             history.push(`/profile/${response.id}`)
 
         }else alert(response.message)

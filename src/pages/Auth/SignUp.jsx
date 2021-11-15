@@ -10,16 +10,16 @@ export function SignUp() {
     const {store,actions} = useContext(Context)
 	const history = useHistory();
 
-    const [name,setName]=useState('');
-    const [urlImage,setUrlImage]=useState('');
-    const [description,setDescription]=useState('');
-    const [bank,setBank]=useState('');
-    const [rif,setRif]=useState('');
-    const [account,setAccount]=useState('');
-    const [website,setWebsite]=useState('');
-    const [logo,setLogo]=useState('');
-    const [password,setPassword]=useState('');
-    const [location,setLocation]=useState('');
+    const [name,setName]=useState(undefined);
+    const [urlImage,setUrlImage]=useState(undefined);
+    const [description,setDescription]=useState(undefined);
+    const [bank,setBank]=useState(undefined);
+    const [rif,setRif]=useState(undefined);
+    const [account,setAccount]=useState(undefined);
+    const [website,setWebsite]=useState(undefined);
+    const [logo,setLogo]=useState(undefined);
+    const [password,setPassword]=useState(undefined);
+    const [location,setLocation]=useState(undefined);
 
     const uploadImage= async (files,direction)=>{
         

@@ -4,11 +4,11 @@ import { Context } from '../../store/appContext'
 
 const CreateEvent = () => {
     const {store,actions} = useContext(Context)
-    const [activityName,setActivityName]= useState('')
-    const [quota,setQuota]= useState('')
-    const [image,setImage]= useState('')
-    const [description,setDescription]= useState('')
-    const [date,setDate]= useState('')
+    const [activityName,setActivityName]= useState(undefined)
+    const [quota,setQuota]= useState(undefined)
+    const [image,setImage]= useState(undefined)
+    const [description,setDescription]= useState(undefined)
+    const [date,setDate]= useState(undefined)
     const history= useHistory()
 
     const uploadImage= async (files)=>{
@@ -37,25 +37,29 @@ const handleClick= async ()=>{
         description:description,
         date:date,
         quota:quota,
-        ong_id:store.id
+        
     }
     const query = await fetch(`${store.url_api}/activity` , {
         method: "POST",
         headers: {
+            Authorization: `Bearer ${store.token}`,
             "content-type": "application/json"
         },
         body:JSON.stringify(activityRegister)
     });
 
     let response= await query.json()
-    if(response.message===false){
-        alert("Algo ocurrió, puedes intentar de nuevo")
-    }else{
+    if(query.ok){
         actions.getONG()
         actions.getActivities()
-        history.push(`/profile/${store.id}`);
+        alert("El evento se creó con Exito")
+        history.push(`/`)
+    }else if(response.msg){
+        alert(response.msg)
+        history.push(`/signin`)
+    } else alert(response.message)
 
-    }
+    
 
 
 }
@@ -91,14 +95,14 @@ return (
         value= {description}
     />
     <input
-        type="text"
+        type="date"
         placeholder='fecha de evento'
         onChange={(e)=>setDate(e.target.value)}
         value= {date}
     />
 
     <button onClick={handleClick}>
-        crear Evento
+        Crear Evento
     </button>
 
 

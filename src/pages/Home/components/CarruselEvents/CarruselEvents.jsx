@@ -20,8 +20,8 @@ export function CarruselEvents() {
 <div>
     <h5 className= 'Title' >Asiste a las Actividades de esta semana</h5>
     <Carousel className = 'CarruselEvent' breakPoints={breakPoints}>
-        {store.activities.map((ong)=>(
-            <Cards key={ong.id} id={ong.id}/>
+        {store.activities.map((activity)=>(
+            <Cards key={activity.id} id={activity.id}/>
 
         ))}
       

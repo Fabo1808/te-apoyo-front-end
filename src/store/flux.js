@@ -5,7 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			url_cloudinary: "https://api.cloudinary.com/v1_1/teapoyo/image/upload",
 			url_api:"http://192.168.0.6:8000",
 			ONG: "",
-			id:'',
+			id:undefined,
 			dataONG:[],
 			activities:[]
 		},
@@ -25,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			localStorage.removeItem("ONG");
 			localStorage.removeItem("id");
 			
-			setStore({ token: undefined,ONG:"" });
+			setStore({ token: undefined,ONG:"" ,id:undefined});
 		},
 	
 		getONG: async () => {

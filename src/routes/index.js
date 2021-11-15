@@ -3,8 +3,9 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { About, Home, SignIn, SignUp, Contact, HowItWorks, Projects} from '../pages'
 import { NavBar } from '../components'
 import Profile from '../pages/profile/profile';
-import CreateEvent from '../pages/CreteEvent/CreateEvent';
 import { Context } from '../store/appContext';
+import CreateEvent from '../pages/CreateEvent/CreateEvent.jsx';
+import VolunteersList from '../pages/VolunteersList/VolunteersList';
 
 export function Routes() {
 
@@ -32,8 +33,12 @@ export function Routes() {
 							<Route path='/contact' component={Contact} />
                             <Route path='/howItWorks' component={HowItWorks} />
                             <Route path='/projects' component={Projects} />
-							<Route path='/profile/:id' component={Profile} />
+							<Route path='/profile/:id'>
+								{store.dataONG?<Profile/>:<Redirect to='/'/>}
+							</Route>
 							<Route path='/createEvent' component={CreateEvent} />
+							<Route path='/volunteers/:activity_id' component={VolunteersList} />
+
                             <Redirect to="/error" />
 						</Switch>
 					</div>

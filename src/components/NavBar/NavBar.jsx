@@ -10,14 +10,19 @@ export function NavBar() {
 
 const singOff= ()=>{
     actions.deleteToken()
-    history.push('/')
+    history.push('/')   
+}
+
+const handleContextMenu=(e)=>{
+    e.preventDefault();
+    history.push('/signin')
 }
   
       return (
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-8">
-                            <NavLink className='navlink' to="/">
+                            <NavLink className='navlink' to="/" onContextMenu={handleContextMenu}>
                                 <img className="LogoPrincipal" src={img6} alt="Card image cap"/>    
                             </NavLink>
                             <NavLink className='navlink' to="/about">Conócenos</NavLink>
