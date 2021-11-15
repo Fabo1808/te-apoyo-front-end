@@ -1,6 +1,6 @@
 import React,{useContext} from "react";
 import { Link,NavLink, useHistory } from "react-router-dom";
-import img6 from '../../images/logo1.png'
+import img6 from '../../images/logo1.png';
 import { Context } from "../../store/appContext";
 import './styles.css'
 
@@ -10,19 +10,14 @@ export function NavBar() {
 
 const singOff= ()=>{
     actions.deleteToken()
-    history.push('/')   
-}
-
-const handleContextMenu=(e)=>{
-    e.preventDefault();
-    history.push('/signin')
+    history.push('/')
 }
   
       return (
                 <div className="container-fluid-navbar">
                     <div className="row">
                         <div className="col-8">
-                            <NavLink className='navlink' to="/" onContextMenu={handleContextMenu}>
+                            <NavLink className='navlink' to="/">
                                 <img className="LogoPrincipal" src={img6} alt="Card image cap"/>    
                             </NavLink>
                             <NavLink className='navlink' to="/about">Conócenos</NavLink>
