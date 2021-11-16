@@ -6,7 +6,7 @@ import './styles.css'
 
 export function NavBar() {
     const {store,actions}=useContext(Context)
-    const history= useHistory()
+    const history= useHistory();
 
 const singOff= ()=>{
     actions.deleteToken()
