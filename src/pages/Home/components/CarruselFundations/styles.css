@@ -1,7 +1,12 @@
 .CarruselFundations{
     margin-top: 50px;
+   
 }
 
 .LogoFundacion {
-    height: 100px;
+    height: auto;
+    width: 200px;
+    
 }
+
+
