@@ -7,6 +7,7 @@ import { Context } from '../store/appContext';
 import CreateEvent from '../pages/CreateEvent/CreateEvent.jsx';
 import VolunteersList from '../pages/VolunteersList/VolunteersList';
 
+
 export function Routes() {
 
 	const {store, actions}= useContext(Context)
@@ -25,10 +26,10 @@ export function Routes() {
 				<NavBar />
 				<main>
 					<div className="container-fluid">
+					    <SignIn onOff={store.onOffSignin}/> 
 						<Switch>
 							<Route exact path='/' component={Home} />
 							<Route path='/about' component={About} />
-							<Route path='/signIn' component={SignIn} />
                             <Route path='/signUp' component={SignUp} />
 							<Route path='/contact' component={Contact} />
                             <Route path='/howItWorks' component={HowItWorks} />
