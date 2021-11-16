@@ -58,10 +58,12 @@ export function Cards({id}) {
       
     
 <div className="card" style={{width: '18rem'}}>
-  <img className="card-img-top " src={activity[0].image} alt="Card image cap"/>
+  <img className="card-img-top" style={{height: '200px'}} src={activity[0].image} alt="Card image cap"/>
   <div className="card-body">
     <h5 className="card-title">{activity[0].activity_name}</h5>
-    <p className="card-text">{activity[0].description}</p>
+    <div className="description-container">
+        <p className="card-text">{activity[0].description}</p>
+    </div>
     <p className="card-text">{activity[0].date}</p>
     <p className="card-text">cupos:{activity[0].quota - activity[0].volunteers.length}</p>
     

@@ -11,6 +11,7 @@ export function NavBar() {
 const singOff= ()=>{
     actions.deleteToken()
     history.push('/')
+
 }
   
       return (

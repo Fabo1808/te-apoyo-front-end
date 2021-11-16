@@ -1,0 +1,17 @@
+.card {
+
+    height: 500px;
+    border-radius: 50%;
+    box-shadow: 5px 10px 20px 1px rgb(95, 172, 172);
+
+}
+
+card-img-top {
+
+    height: 90px;
+    display: flex;
+}
+
+.description-container{
+    height: 100px;
+}

@@ -11,13 +11,13 @@ export function CarruselEvents() {
     
     
     const breakPoints = [
-        {width:100, itemsToShow:3},
+        {width:500, itemsToShow:4},
     ]
 
     return (
     
 
-<div>
+<div className='SeccionEventos'>
     <h5 className= 'Title' >Asiste a las actividades de esta semana</h5>
     <Carousel className = 'CarruselEvent' breakPoints={breakPoints}>
         {store.activities.map((activity)=>(
