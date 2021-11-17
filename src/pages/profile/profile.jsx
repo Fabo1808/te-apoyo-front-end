@@ -12,22 +12,29 @@ const Profile = () => {
     const ONG= store.dataONG.filter((ong)=>ong.id.toString()=== id)
      
       console.log(ONG[0])
+
     const breakPoints = [
         {width:100, itemsToShow:3},
     ]
 
    
     return (
-        <div className='container '>
+        <div className='container w-75'>
             <div className=' container-name'>
 
                 <h2 className='name'>{ONG[0].ong_name}</h2>
             </div>
-            <div>
+            <div className="position-relative">
 
             <img src={ONG[0].image} className='image'/>
+            <button className='btn btn-secondary  btn-lg position-absolute top-100 start-100 translate-middle '>DONAR</button>
             </div>
-               <p>{ONG[0].description}</p>
+            <div className='container-description margintop'>
+                <p>{ONG[0].description}</p>
+            </div>
+            <div className='container-description'>
+                <p>{ONG[0].location}</p>
+            </div>
         
        
          

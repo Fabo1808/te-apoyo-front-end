@@ -200,7 +200,7 @@ export function SignUp() {
                     Registrarme
                 </Button>
             </div> 
-
+             
 
             
           
