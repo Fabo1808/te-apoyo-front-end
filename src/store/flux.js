@@ -10,7 +10,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			activities:[],
 			img:undefined,
 			logo:undefined,
-			onOffSignin:false
+			onOffSignin:false,
+			modalDonar: false
 		},
 	
 	actions: {
@@ -62,6 +63,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		deleteLogoImg:()=>{
 			setStore({img:undefined, logo: undefined})
+		},
+		modalDonar:()=>{
+			const prevStore = getStore()
+			setStore({modalDonar:!prevStore.modalDonar})
 		}
 
 

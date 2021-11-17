@@ -47,7 +47,7 @@ return (
          </Modal.Header>
          <Modal.Body>
          
-        <div className="mb-3 row px-3">
+        <div className="mb-3 row px-3 mt-5">
             <label for="staticEmail" className="col-sm-2 col-form-label">ONG</label>
             <div className="col-sm-10">
                 <input
@@ -69,7 +69,7 @@ return (
                     />
              </div>
         </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="d-grid gap-2 col-6 mx-auto my-5">
             <button
                 type="button"
                 className="btn btn-success"

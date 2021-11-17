@@ -2,6 +2,7 @@ import React,{useContext,useState} from 'react';
 import { Context } from '../../store/appContext';
 import { useHistory } from "react-router-dom";
 import './styles.css'
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 
 import Button from 'react-bootstrap/Button'
@@ -83,7 +84,10 @@ export function SignUp() {
                     <label for="logo" className="container-logo">
                         {store.logo 
                         ? <img src={store.logo} alt='' className='logo'/>
-                        :'logo'
+                        :<div>
+                        <CloudUploadIcon color="primary"  style={{ fontSize: '50px' }}/>
+                        <p> Subir Logo </p>
+                    </div>
                         }
                     </label>
                     <input 
@@ -97,7 +101,7 @@ export function SignUp() {
                 <div className='col-8'>
                     <input 
                         type="text" 
-                        className="input" 
+                        className="input " 
                         placeholder="Nombre"
                         onChange={e => setName(e.target.value)}
                         value={name}
@@ -109,7 +113,10 @@ export function SignUp() {
                 <label for="image" className="container-img">
                 {store.img 
                     ? <img src={store.img} alt='' className='img'/>
-                    :'image'
+                    :<div>
+                        <CloudUploadIcon color="primary"  style={{ fontSize: 200 }}/>
+                        <p>Click para subir Imagen de perfil</p>
+                    </div>
                 }
                 </label>
                 <input 
@@ -122,10 +129,11 @@ export function SignUp() {
             </div>
             <div className="mb-3">
                 <textarea
-                    className="form-control" 
+                    className="form-control " 
                     placeholder="Descripción"
                     onChange={e => setDescription(e.target.value)}
                     value={description}
+                    style={{height:"100px"}}
                 />
                     
             </div>  
