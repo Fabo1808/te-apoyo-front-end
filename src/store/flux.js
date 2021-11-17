@@ -54,10 +54,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		setLogo:(logo) => {
 			setStore({logo:logo})
+
 		}, 
 		onOffSignin:()=>{
 			const prevStore = getStore()
 			setStore({onOffSignin:!prevStore.onOffSignin})
+		},
+		deleteLogoImg:()=>{
+			setStore({img:undefined, logo: undefined})
 		}
 
 
