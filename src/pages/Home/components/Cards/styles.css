@@ -14,4 +14,58 @@ card-img-top {
 
 .description-container{
     height: 100px;
+    text-align: justify;
 }
+
+
+.Voluntario {
+
+    border-radius: 50%;
+}
+
+.card-text-date {
+
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0;
+    padding-top: 25px;
+}
+
+.card-text-cupons {
+
+    font-weight: 500;
+}
+
+.campo-modal-voluntario {
+
+    padding-bottom: 10px;
+    display: flex;
+
+   
+}
+
+
+  
+
+
+.imput-campo-modal-voluntario {
+
+    width: 60%;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.modal-voluntario {
+
+    text-align: center;
+    padding-bottom: 10px;
+    margin-top: 40px;
+
+}
+
+
+
+
+

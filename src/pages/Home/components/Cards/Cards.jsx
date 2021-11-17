@@ -64,8 +64,8 @@ export function Cards({id}) {
     <div className="description-container">
         <p className="card-text">{activity[0].description}</p>
     </div>
-    <p className="card-text">{activity[0].date}</p>
-    <p className="card-text">cupos:{activity[0].quota - activity[0].volunteers.length}</p>
+    <p className="card-text-date">{activity[0].date}</p>
+    <p className="card-text-cupons">cupos:{activity[0].quota - activity[0].volunteers.length}</p>
     
      {location.pathname  === `/profile/${store.id}`
         ? <Link
@@ -81,7 +81,7 @@ export function Cards({id}) {
                      ? handleShow 
                      : ()=> { alert("Cupos agotados")} }
           >
-           quiero ser Voluntario
+           Quiero ser voluntario
          </Button>
   
              
@@ -92,68 +92,76 @@ export function Cards({id}) {
       
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Gracias por tu interés en participar!</Modal.Title>
-        </Modal.Header>
+    
+          <Modal.Header className="cerradoo" closeButton>
+          <h4>Gracias por tu interés en participar!</h4>
+          </Modal.Header>
+
+        <div className="Body-Voluntario mt-3 px-2">
         <Modal.Body>
+          
           {!show2 &&(
               <>
-               <p>Registraremos tus datos y te contactaremos</p>
-               <input 
-                 type='text' 
-                 placeholder='Nombre' 
-                 onChange={(e)=> setName(e.target.value) }
-                 value={name}
-               />
-               <input 
-                 type='text' 
-                 placeholder='Apellido' 
-                 onChange={(e)=> setLastName(e.target.value) }
-                 value={lastName}
-                 />
-               <input 
-                 type='email' 
-                 placeholder='Email' 
-                 onChange={(e)=> setEmail(e.target.value) }
-                 value={email}
-               />
-               <input 
-                 type='text' 
-                 placeholder='Telefono' 
-                 onChange={(e)=> setPhone(e.target.value) }
-                 value={phone}
-               />
-             
+               <p className='px-1'>Registra tus datos y te contactaremos pronto.</p>
+
+               <div className="modal-voluntario">
+                    <div className="modales">
+                        <div className="campo-modal-voluntario">
+                            <input className="imput-campo-modal-voluntario" 
+                              type='text' 
+                              placeholder='Nombre' 
+                              onChange={(e)=> setName(e.target.value) }
+                              value={name}
+                            />
+                        </div>
+                        <div className="campo-modal-voluntario">
+                            <input className="imput-campo-modal-voluntario"
+                              type='text' 
+                              placeholder='Apellido' 
+                              onChange={(e)=> setLastName(e.target.value) }
+                              value={lastName}
+                              />
+                        </div>
+                        <div className="campo-modal-voluntario">
+                            <input className="imput-campo-modal-voluntario"
+                              type='email' 
+                              placeholder='Email' 
+                              onChange={(e)=> setEmail(e.target.value) }
+                              value={email}
+                            />
+                        </div>
+                        <div class="campo-modal-voluntario">
+                            <input className="imput-campo-modal-voluntario"
+                              type='text' 
+                              placeholder='Telefono' 
+                              onChange={(e)=> setPhone(e.target.value) }
+                              value={phone}
+                            />
+                          </div>
+                        </div>
+                        <div className='mt-5'>
+                          <Button ClassName="boton-piso-modal"  onClick={handleClick}>
+                            Enviar datos
+                          </Button>
+                        </div>
+                        
+                      </div>                          
                </>
+           
+           
 
           )}
+
+        
           {show2 &&(
             <p>Tus datos fueron Enviados, Pronto será contactado</p>
           )}
          
 
         </Modal.Body>
-        <Modal.Footer>
-          {!show2 &&(
-            <>
-          <Button variant="secondary" onClick={handleClose}>
-            Cancelar
-          </Button>
-                   <Button variant="primary" onClick={handleClick}>
-                   Enviar Datos
-                 </Button>
-                 </>
-          )}
-           {show2 &&(
-                   <Button variant="primary" onClick={handleClose}>
-                   Continuar
-                 </Button>
-          )}
-          
-         
-        </Modal.Footer>
+      </div>
+      
       </Modal>
-     
   </div>
 </div>
 
