@@ -56,7 +56,7 @@ const handleClick= async ()=>{
         history.push(`/`)
     }else if(response.msg){
         alert(response.msg)
-        history.push(`/signin`)
+        actions.onOffSignin()
     } else alert(response.message)
 
     

@@ -3,11 +3,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			token: undefined,
 			url_cloudinary: "https://api.cloudinary.com/v1_1/teapoyo/image/upload",
-			url_api:"http://10.62.1.136:8000",
+			url_api:"http://192.168.43.108:8000",
 			ONG: "",
 			id:undefined,
 			dataONG:[],
-			activities:[]
+			activities:[],
+			img:undefined,
+			logo:undefined,
+			onOffSignin:false
 		},
 	
 	actions: {
@@ -46,6 +49,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 			}
 	
 		},
+		setImage:(img) => {
+			setStore({img:img})
+		},
+		setLogo:(logo) => {
+			setStore({logo:logo})
+
+		}, 
+		onOffSignin:()=>{
+			const prevStore = getStore()
+			setStore({onOffSignin:!prevStore.onOffSignin})
+		},
+		deleteLogoImg:()=>{
+			setStore({img:undefined, logo: undefined})
+		}
+
 
 	}
 };

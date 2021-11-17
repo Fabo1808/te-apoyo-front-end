@@ -1,6 +1,7 @@
 import React,{useContext,useState} from 'react';
 import { Context } from '../../store/appContext';
 import { useHistory } from "react-router-dom";
+import './styles.css'
 
 
 import Button from 'react-bootstrap/Button'
@@ -11,13 +12,11 @@ export function SignUp() {
 	const history = useHistory();
 
     const [name,setName]=useState(undefined);
-    const [urlImage,setUrlImage]=useState(undefined);
     const [description,setDescription]=useState(undefined);
     const [bank,setBank]=useState(undefined);
     const [rif,setRif]=useState(undefined);
     const [account,setAccount]=useState(undefined);
     const [website,setWebsite]=useState(undefined);
-    const [logo,setLogo]=useState(undefined);
     const [password,setPassword]=useState(undefined);
     const [location,setLocation]=useState(undefined);
 
@@ -34,9 +33,9 @@ export function SignUp() {
        
         let response= await query.json()
         if(direction==='logo'){
-            setLogo(response.secure_url)
+           actions.setLogo(response.secure_url)
         }else
-            setUrlImage(response.secure_url)
+            actions.setImage(response.secure_url)
      
     }
 
@@ -45,8 +44,8 @@ export function SignUp() {
              ong_name:name,
              password:password,
              location:location,
-             image:urlImage,
-             logo:logo,
+             image:store.img,
+             logo:store.logo,
              rif:rif,
              website_address:website,
              description:description,
@@ -65,6 +64,7 @@ export function SignUp() {
         if(response.message===false){
             alert("Algo ocurrió, puedes intentar de nuevo")
         }else{
+            actions.deleteLogoImg()
             actions.getONG()
             history.push("/");
 
@@ -75,119 +75,137 @@ export function SignUp() {
 	
 
     return (
-        <div className='container text-start mt-5 text-secondary w-75'>
-            <div className="mb-3 w-25">
-            <label for="exampleFormControlInput1" className="form-label">Nombre</label>
-                <input 
-                    type="text" 
-                    className="form-control" 
-                    placeholder="name_example"
-                    onChange={e => setName(e.target.value)}
-                    value={name}/>
+        
+        <div className=' w-75 container bg my-5  p-5 shadow-lg'>
+            <div className= 'margen'></div>
+            <div className=" row logoname ">
+                <div className="col-auto" >
+                    <label for="logo" className="container-logo">
+                        {store.logo 
+                        ? <img src={store.logo} alt='' className='logo'/>
+                        :'logo'
+                        }
+                    </label>
+                    <input 
+                        id ='logo'
+                        type ="file" 
+                        className="hidden" 
+                        rows="3"
+                        onChange={e => uploadImage(e.target.files,'logo')}
+                    />
+                </div>
+                <div className='col-8'>
+                    <input 
+                        type="text" 
+                        className="input" 
+                        placeholder="Nombre"
+                        onChange={e => setName(e.target.value)}
+                        value={name}
+                    />
+                </div>
             </div>
-            <div className="mb-3 w-25">
-            <label for="exampleFormControlInput1" className="form-label">Ubicación</label>
+
+           <div className="mb-3">
+                <label for="image" className="container-img">
+                {store.img 
+                    ? <img src={store.img} alt='' className='img'/>
+                    :'image'
+                }
+                </label>
                 <input 
-                    type="text" 
-                    className="form-control" 
-                    placeholder="Dirección"
-                    onChange={e => setLocation(e.target.value)}
-                    value={location}/>
-            </div>
-            <div className="mb-3">
-                <label for="exampleFormControlTextarea1" className="form-label">imagen</label>
-                <input 
+                    id= 'image'
                     type ="file" 
-                    className="form-control" 
+                    className="hidden" 
                     rows="3"
                     onChange={e => uploadImage(e.target.files,'image')}
-                    />
-            </div>
-            <div className="mb-3">
-                <label for="exampleFormControlTextarea1" className="form-label">logo</label>
-                <input 
-                    type ="file" 
-                    className="form-control" 
-                    rows="3"
-                    onChange={e => uploadImage(e.target.files,'logo')}
-                    />
+                />
             </div>
             <div className="mb-3">
                 <textarea
                     className="form-control" 
-                    rows="3" 
                     placeholder="Descripción"
                     onChange={e => setDescription(e.target.value)}
-                    value={description}/>
+                    value={description}
+                />
                     
             </div>  
-            <div className="mb-3">
-                <label for="exampleFormControlTextarea1" className="form-label">Website</label>
+            <div className="mb-3 ">
+           
                 <input 
-                    type ="text" 
+                    type="text" 
+                    className="form-control" 
+                    placeholder='Ubicación'
+                    onChange={e => setLocation(e.target.value)}
+                    value={location}/>
+            </div>
+            <div className="mb-3">
+               
+                <input 
+                    type ="email" 
                     className="form-control" 
                     rows="3"
+                    placeholder='Website'
                     onChange={e => setWebsite(e.target.value)}
                     value={website}
                     />
             </div>
-            <div className="mb-3 card">
-                <div className='container p-4'>
-                    <p>Datos Bancarios</p>
-                    <div className='row d-flex align-items-center'>
-                        <div className='col-2'>Banco:</div>
-                        <div className='col-10'>
-                            <input 
-                                type="text" 
-                                className="form-control" 
-                                onChange={e => setBank(e.target.value)}
-                                value={bank}
-                                />
-                        </div>
-                            
-                    </div>
-                    <div className='row d-flex align-items-center'>
-                        <div className='col-2'>RIF:</div>
-                        <div className='col-10'>
-                            <input 
-                                type="text" 
-                                className="form-control"
-                                onChange={e => setRif(e.target.value)}
-                                value={rif}
-                                />
-                        </div>
-                            
-                    </div>
-                    <div className='row d-flex align-items-center'>
-                        <div className='col-2'>Cuenta:</div>
-                        <div className='col-10'>
-                            <input 
-                                type="text" 
-                                className="form-control"
-                                onChange={e => setAccount(e.target.value)}
-                                value={account} 
-                                />
-                        </div>
-                            
-                    </div>
-                  
+
+            <div className="mb-3 ">
+                
+                <p>Datos Bancarios</p>
+                <div className='mb-1'>
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        placeholder='Banco'
+                        onChange={e => setBank(e.target.value)}
+                        value={bank}
+                        />       
                 </div>
+                <div className='mb-1'>
+                    <input 
+                        type="text" 
+                        className="form-control"
+                        placeholder='R.I.F'
+                        onChange={e => setRif(e.target.value)}
+                        value={rif}
+                        />
+                </div>
+    
+                <div>
+                    
+                        <input 
+                            type="text" 
+                            className="form-control"
+                            placeholder='N. Cuenta'
+                            onChange={e => setAccount(e.target.value)}
+                            value={account} 
+                            />       
+                </div>
+                  
+                
                 
             </div>  
-            <div className="mb-3 w-25">
-            <label for="exampleFormControlInput1" className="form-label">password</label>
-                <input 
-                    type="password" 
-                    className="form-control" 
-                    placeholder="Ingresa una contraseña"
-                    onChange={e => setPassword(e.target.value)}
-                    value={password}/>
+            <div className="mb-3 w-25" >
+                <label for="exampleFormControlInput1" className="form-label">password</label>
+                    <input 
+                        type="password" 
+                        className="form-control" 
+                        placeholder="Ingresa una contraseña"
+                        onChange={e => setPassword(e.target.value)}
+                        value={password}/>
             </div>
             <div className=" mb-5">
                 <Button variant="primary" onClick={handleClick}>
-                    Enviar
+                    Registrarme
                 </Button>
-            </div>
+            </div> 
+             
+
+            
+          
 	    </div>
     )
 }
+
+
