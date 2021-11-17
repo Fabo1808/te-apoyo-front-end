@@ -20,7 +20,7 @@ export function CarruselFundations() {
     
 
 <div>
-    <div className='card' style={{height:'0px'}}></div>
+    
     <h5 className= 'Title' >Descubre a quienes puedes ayudar</h5>
     <Carousel className = 'CarruselFundations' breakPoints={breakPoints}>
       <Link to='/Contact'>
