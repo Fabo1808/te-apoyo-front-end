@@ -22,4 +22,11 @@
     padding-top: 30px;
 }
 
+.card-h{
+   border-radius: 10px;
+    width: 1000px;
+    height: auto;
+    padding: 50px;
+    background-color: rgba(226, 223, 243, 0.741);
+}
 

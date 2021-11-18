@@ -6,6 +6,7 @@ import Profile from '../pages/profile/profile';
 import { Context } from '../store/appContext';
 import CreateEvent from '../pages/CreateEvent/CreateEvent.jsx';
 import VolunteersList from '../pages/VolunteersList/VolunteersList';
+import './styles.css'
 
 
 export function Routes() {
@@ -23,10 +24,15 @@ export function Routes() {
 	
 		return (
 			<div id="app-container">
+				<div className="position">
 				<NavBar />
+                
+				</div>
+				<div className="espaciador"></div>
 				<main>
 					<div className="container-fluid">
 					    <SignIn onOff={store.onOffSignin}/> 
+						<CreateEvent/>
 						<Switch>
 							<Route exact path='/' component={Home} />
 							<Route path='/about' component={About} />
@@ -37,7 +43,6 @@ export function Routes() {
 							<Route path='/profile/:id'>
 								{store.dataONG?<Profile/>:<Redirect to='/'/>}
 							</Route>
-							<Route path='/createEvent' component={CreateEvent} />
 							<Route path='/volunteers/:activity_id' component={VolunteersList} />
 
                             <Redirect to="/error" />

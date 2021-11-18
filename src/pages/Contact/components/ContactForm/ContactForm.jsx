@@ -48,17 +48,17 @@ export function ContactForm() {
     return (
     <div className='container'>
       <div className='row mt-5 container'>
-        <div className="col-6 text-secondary text-start">
+        <div className="col-6  text-start">
           <h1 className=''>Contáctanos</h1>
-          <div className='w-50'>
-          <p>Llena este formulario para poder contactarte y ver cómo podermos trabajar juntos</p>
+          <div className='w-75'>
+          <p className='fs-4'>Llena este formulario para poder contactarte y ver cómo podermos trabajar juntos</p>
           </div>
 
           <img  className='w-75 rounded-3' src={img} alt="falta seleccionar imagen" />
         </div>
-        <div className="col-6">
+        <div className="col-6 mt-5">
             <Form>
-        <Form.Group className="mb-3" controlId="formBasicName">
+        <Form.Group className="mb-3 mt-5" controlId="formBasicName">
           <Form.Control type="name" placeholder="Nombre" onChange={(e)=>setName(e.target.value)}/>
           <Form.Text className="text-muted">
           </Form.Text>

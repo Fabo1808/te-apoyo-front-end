@@ -9,10 +9,10 @@ export function ProjectSearchBar() {
 <div class="Searchlist">
   <div class="row">
     <div class="col-8">
-      PROYECTOS
+      <h1>PROYECTOS</h1>
     </div>
     <div class="col-4">
-        <div class="input-group rounded">
+        <div>
             <input type="search" class="form-control rounded" placeholder="Buscar" aria-label="search"
             aria-describedby="search-addon" />
         </div>

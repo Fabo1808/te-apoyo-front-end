@@ -8,6 +8,8 @@ import './styles.css'
 export function MainImage() {
 
     return (
+      <div className= 'position-relative'>
+            <h1 className='voluntades'>1000 VOLUNTADES ES:</h1>
       <Carousel >
       <Carousel.Item className = 'MainImage'>
         <img
@@ -17,7 +19,7 @@ export function MainImage() {
         />
         <Carousel.Caption>
           <h3>Promoción y sensibilización</h3>
-          <p>Generación de cambios relacionados con los derechos humanos.</p>
+          <p >Generación de cambios relacionados con los derechos humanos.</p>
         </Carousel.Caption>
       </Carousel.Item >
       <Carousel.Item className = 'MainImage'>
@@ -46,5 +48,8 @@ export function MainImage() {
       </Carousel.Item>
     </Carousel>
 
+
+      </div>
+    
 )
   }

@@ -21,7 +21,7 @@ export function CarruselFundations() {
 
 <div>
     
-    <h5 className= 'Title' >Descubre a quienes puedes ayudar</h5>
+    <h3 className= 'Title' >Descubre a quienes puedes ayudar</h3>
     <Carousel className = 'CarruselFundations' breakPoints={breakPoints}>
       <Link to='/Contact'>
         <img
