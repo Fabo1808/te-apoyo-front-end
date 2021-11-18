@@ -4,3 +4,12 @@
     display: flex;
 }
 
+.voluntades{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    z-index: 1000;
+    top:65%;
+    left: 35%;
+  
+
+}
