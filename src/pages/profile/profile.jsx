@@ -26,7 +26,7 @@ const Profile = () => {
 
                 <h2 className='name'>{ONG[0].ong_name}</h2>
             </div>
-            <div className="position-relative">
+            <div className="position-relative container-img-perfil">
 
             <img src={ONG[0].image} className='image'/>
             <button 
