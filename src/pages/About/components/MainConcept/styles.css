@@ -1,5 +1,5 @@
 .ContainerConcept {
-    
+    position: relative;
     padding-top:60px;
     padding-left: 50px;
 
@@ -25,13 +25,16 @@
 
 .description-section {
 
-    font-size: 10px;
+    font-size: 20px;
     
 }
 
 .card-main {
 
-    width: 580px;
-    height: 700px;
-
+    width: 50%;
+    height: 100vh;
+    position: fixed;
+    z-index: 900;
+    top:70px;
+    left: 50%;
 }

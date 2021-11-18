@@ -15,7 +15,7 @@ const singOff= ()=>{
 }
   
       return (
-                <div className="container-fluid-navbar">
+                <div className="container-fluid-navbar shadow-lg">
                     <div className="row">
                         <div className="col-8">
                             <NavLink className='navlink' to="/">
@@ -62,7 +62,7 @@ const singOff= ()=>{
 
 
                         </div>
-                        {store.token && (
+                        {/* {store.token && (
                             <>
                             <h5 className='text-start mx-5'>
                                 Bienvenido(a) {store.ONG}
@@ -70,7 +70,7 @@ const singOff= ()=>{
 
 
                             </>
-                        )}
+                        )} */}
 
                 </div>
             </div>

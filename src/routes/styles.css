@@ -1,0 +1,10 @@
+
+
+.position{
+    position: fixed;
+    z-index: 1000;
+}
+.espaciador{
+    height: 70px;
+    width: 100vw;
+}
