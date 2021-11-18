@@ -49,11 +49,11 @@ const singOff= ()=>{
                                     className="btn btn-outline-primary"
                                     onClick={singOff}>Cerrar sesión
                                 </button>
-                                <Link
-                                    to='/createEvent'
+                                <button
                                     className="btn btn-primary mx-2"
+                                    onClick={()=> actions.modalEvent()}
                                 >Crear un Evento
-                                </Link>
+                                </button>
 
 
                                 </>

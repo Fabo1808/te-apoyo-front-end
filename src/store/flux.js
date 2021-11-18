@@ -11,7 +11,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			img:undefined,
 			logo:undefined,
 			onOffSignin:false,
-			modalDonar: false
+			modalDonar: false,
+			modalEvent:false,
+			imgEvent:undefined
 		},
 	
 	actions: {
@@ -67,6 +69,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 		modalDonar:()=>{
 			const prevStore = getStore()
 			setStore({modalDonar:!prevStore.modalDonar})
+		},
+		modalEvent:()=>{
+			const prevStore = getStore()
+			setStore({modalEvent:!prevStore.modalEvent})
+		},
+		setImgEvent:(img) => {
+			setStore({imgEvent:img})
+		},
+		deleteImgEvent:()=>{
+			setStore({imgEvent:undefined})
 		}
 
 
