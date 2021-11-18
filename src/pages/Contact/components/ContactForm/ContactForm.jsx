@@ -2,7 +2,7 @@ import React,{useState,useContext}from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import './styles.css'
-import img from '../../../../images/logo1.png'
+import img from '../../../../images/homeimage2.jpg'
 import { Context } from '../../../../store/appContext'
 import { useHistory } from 'react-router-dom'
 
@@ -54,11 +54,11 @@ export function ContactForm() {
           <p className='fs-4'>Llena este formulario para poder contactarte y ver cómo podermos trabajar juntos</p>
           </div>
 
-          <img  className='w-50 rounded-3' src={img} alt="falta seleccionar imagen" />
+          <img  className='w-75 rounded-3' src={img} alt="falta seleccionar imagen" />
         </div>
         <div className="col-6 mt-5">
             <Form>
-        <Form.Group className="mb-3" controlId="formBasicName">
+        <Form.Group className="mb-3 mt-5" controlId="formBasicName">
           <Form.Control type="name" placeholder="Nombre" onChange={(e)=>setName(e.target.value)}/>
           <Form.Text className="text-muted">
           </Form.Text>
