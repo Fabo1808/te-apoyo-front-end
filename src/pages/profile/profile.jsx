@@ -63,19 +63,22 @@ const Profile = () => {
         
         
 
-        <div className=' container d-flex justify-content-center row'>
+        <Modal.Body>
+        <div className='container-logo'>
             <img  className=" logo-profile" src={ONG[0].logo} alt={ONG[0].ong_name} />
         </div>
-        <Modal.Body>
-        <div className='py-5' >
+        <div className='container-datos' >
 
-                <h5>Datos Bancarios:</h5>
-                <h6>Banco:</h6>
+                <h4 className='text-center mb-1'>Datos Bancarios:</h4>
+                <div className="container">
+
+                <h5>Banco:</h5>
                 <p>{ONG[0].bank}</p>
-                <h6>Cuenta:</h6>
+                <h5>Cuenta:</h5>
                 <p>{ONG[0].account}</p>
-                <h6>RIF:</h6>
+                <h5>RIF:</h5>
                 <p>{ONG[0].rif}</p>
+                </div>
         </div>
             </Modal.Body>
 
