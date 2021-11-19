@@ -1,15 +1,15 @@
 .name{
-  margin: 10px;
+ 
   text-align: start;
   display: inline-block;
-  border-bottom: 1px solid rgb(77, 71, 71);
+
 
 }
 
 .container-name{
    display: flex;
    justify-content: start;
-   margin: 50px 0px 10px 70px;  
+   margin: 50px 0px 10px;  
 }
 
 .image{
@@ -50,4 +50,13 @@ height: auto;
   margin-left: auto;
   margin-right: auto;
 
+}
+
+
+.posicion-boton-donar{
+
+  position: absolute;
+  top: 350px;
+  left: 1050px;
+  
 }

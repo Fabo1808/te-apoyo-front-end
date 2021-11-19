@@ -30,10 +30,10 @@ const singOff= ()=>{
                             {!store.token && (
                                 <>
                                 <button 
-                                    className=' btn btn-primary' 
+                                    className='Iniciar-Sesion-ONG' 
                                     onClick={()=>actions.onOffSignin()}
                                 >
-                                Iniciar sesión
+                                Mi ONG
                                 </button>
                                 <NavLink className='navlinkright' to="/signUp">
                                     <button type="button" className="btn btn-outline-primary">Registrar Mi ONG</button>
@@ -46,7 +46,7 @@ const singOff= ()=>{
                                 <>
                                 <button
                                     type="button"
-                                    className="btn btn-outline-primary"
+                                    className="Iniciar-Sesion-ONG mx-2"
                                     onClick={singOff}>Cerrar sesión
                                 </button>
                                 <button

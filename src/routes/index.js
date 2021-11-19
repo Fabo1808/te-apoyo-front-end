@@ -30,7 +30,7 @@ export function Routes() {
 				</div>
 				<div className="espaciador"></div>
 				<main>
-					<div className="container-fluid">
+					<div className="container-fluid p-0">
 					    <SignIn onOff={store.onOffSignin}/> 
 						<CreateEvent/>
 						<Switch>

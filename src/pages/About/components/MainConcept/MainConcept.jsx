@@ -1,5 +1,5 @@
 import React from 'react'
-import img9 from '../../../../images/helpimage.jpg'
+import img9 from '../../../../images/help-image-transp.png'
 import './styles.css'
 
 

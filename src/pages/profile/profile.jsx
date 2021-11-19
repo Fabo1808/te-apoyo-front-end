@@ -30,18 +30,18 @@ const Profile = () => {
 
             <img src={ONG[0].image} className='image'/>
             <button 
-                className='btn btn-secondary  btn-lg position-absolute top-100 start-100 translate-middle '
+                className='posicion-boton-donar btn btn-success  btn-lg' 
                 onClick={()=>actions.modalDonar()}
                 >DONAR</button>
             </div>
             <div className='container-description margintop'>
                 <p>{ONG[0].description}</p>
             </div>
-            <div className='container-description'>
+            {/* <div className='container-description'>
                 <p>{ONG[0].location}</p>
-            </div>
+            </div> */}
         
-       
+            <h3 className= 'Title' >Asiste a las próximas actividades </h3>
          
         
         <Carousel className = 'CarruselEvent' breakPoints={breakPoints}>
